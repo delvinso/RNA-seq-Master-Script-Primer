@@ -1,5 +1,5 @@
 # RNA-seq-Master-Script-Primer
-# A primer for Isoform Expression Analysis using RNA-Seq Reads with the Tuxedo Suite
+## A Primer for Isoform Expression Analysis using RNA-Seq Reads with the Tuxedo Suite
 
 This document is intended to serve as a quick guide to creating a master shell script for batch analysis for RNA-seq paired end reads and assumes you have
 some background of bash commands, RNA-seq and working on a server cluster. **The script does not apply only to the Tuxedo Suite and can be customized for any large scale sample analysis.**
@@ -63,7 +63,7 @@ MyProject/
                  └── genome.fa
 ```
 
-#The contents of the master shell script
+### The contents of the master shell script
 
 ```bash
 #!/bin/bash
