@@ -195,8 +195,8 @@ MyProject/
 
 ### Breaking down the master shell script.... (WIP)
 Could do something where I explain each component of the script and then have the script in full at the end??
-##1. Setting the appropriate variables and directory paths
-##2. Tophat2 - alignment
-##3. Cufflinks - expression quantification
-##4. ....
+1. Setting the appropriate variables and directory paths
+2. Tophat2 - alignment
+3. Cufflinks - expression quantification
+4. ....
 
