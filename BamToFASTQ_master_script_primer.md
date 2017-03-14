@@ -7,7 +7,7 @@ TO DO :
 1. pre-face
 2. in depth explanation of code
 
-### Project Directory - The directory tree of where the raw data is stored (away from the home user directory as indicated by '...' )
+#### Project Directory - The directory tree of where the raw data is stored (away from the home user directory as indicated by '...' )
 
 ```
 ...ProjectData/
@@ -29,7 +29,7 @@ TO DO :
         └── sample100.bam
 ```
 
-### Home Directory - Before running BamToFASTQ_master.sh
+#### Home Directory - Before running BamToFASTQ_master.sh
 
 How the home directory would be set up for analysis.
 
@@ -96,7 +96,7 @@ SECOND_END_FASTQ=$OUTDIR'/'$fileName'/'$fileName'_read2.fastq'
   fi
   done
 ```
-### Home directory - after executing BAMtoFASTQ_master.sh
+#### Home directory - after executing BAMtoFASTQ_master.sh
 
 ```
   MyProject/
