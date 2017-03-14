@@ -82,13 +82,13 @@ REF=/MyProject/references/Homo_Sapiens/GRCh38/WholeGenomeFasta/genome.fa
 DATASET=ONE
 if [ $DATASET = 'ONE' ]; then
   echo "###################### Settings for DATASET ONE ######################"
-  TH2_INDIR=.../ProjectData/DatasetOne/Cell Line One
+  TH2_INDIR=.../ProjectData/DatasetOne/sample1
   TH2_OUTDIR=/MyProject/data/DatasetOne/analysis/tophat2
   CL_OUTDIR=/MyProject/data/DatasetOne/analysis/cufflinks
   SCRIPTDIR=/MyProject/scripts/DatasetOne
 else
   echo "###################### Settings for DATASET TWO ######################"
-  TH2_INDIR=.../ProjectData/DatasetTwo/Cell Line One
+  TH2_INDIR=.../ProjectData/DatasetTwo/sample2
   TH2_OUTDIR=/MyProject/data/DatasetTwo/analysis/tophat2
   CL_OUTDIR=/MyProject/data/DatasetTwo/analysis/cufflinks
   SCRIPTDIR=/MyProject/scripts/DataSetTwo
@@ -97,11 +97,11 @@ fi
 for file in $TH2_INDIR/*;
   do
 
-  #grab basename of current cell line to name output files
+  # grab basename of current cell line to name output files
   fileName=$(basename $file)
   echo $fileName
 
-  #Creating output directory for each cell line so each cell line has its own folder under its corresponding analysis
+  # creating output directory for each cell line so each cell line has its own folder under its corresponding analysis
   [ ! -d $TH2_OUTDIR/$fileName ] && mkdir $TH2_OUTDIR/$fileName
   [ ! -d $CL_OUTDIR/$fileName ] && mkdir $CL_OUTDIR/$fileName
 
@@ -117,7 +117,7 @@ module load bowtie2/2.2.4
 module load tophat2/2.1.0
 module load cufflinks/2.2.1
 
-#tophat2 parameters
+# tophat2 parameters
 
 tophat2 -G $GENE_REFERENCE \
 -p 4 \
@@ -129,10 +129,10 @@ tophat2 -G $GENE_REFERENCE \
 $BOWTIE2INDEX \
 $TH2_INDIR/$fileName/$fileName'_read1.'* $TH2_INDIR/$fileName/$fileName'_read2.'*
 
-#renaming the tophat2 output bam file with corresponding cell line name for easier identificatiion down the road
+# renaming the tophat2 output bam file with corresponding cell line name for easier identificatiion down the road
 mv $TH2_OUTDIR/$fileName/accepted_hits.bam $TH2_OUTDIR/$fileName/accepted_hits_$fileName.bam
 
-#cufflinks parameters
+# cufflinks parameters
 
 cufflinks -G $GENE_REFERENCE \
 -p 6 \
